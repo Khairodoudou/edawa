@@ -1,0 +1,270 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+// ========================
+// Wilaya (Province)
+// ========================
+model Wilaya {
+  id           Int        @id @default(autoincrement())
+  code         Int        @unique
+  name         String
+  pharmacies   Pharmacy[]
+
+  @@map("wilayas")
+}
+
+// ========================
+// Medicine Catalog (National)
+// ========================
+model Medicine {
+  id           String        @id @default(cuid())
+  name         String
+  genericName  String
+  category     String
+  form         String
+  dosage       String
+  manufacturer String
+  image        String?
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  stockItems   StockItem[]
+
+  @@map("medicines")
+}
+
+// ========================
+// Pharmacy
+// ========================
+model Pharmacy {
+  id                 String              @id @default(cuid())
+  name               String
+  address            String
+  city               String
+  wilayaId           Int
+  wilaya             Wilaya              @relation(fields: [wilayaId], references: [id])
+  phone              String
+  email              String              @unique
+  registrationNumber String              @unique
+  hours              String              @default("08:00 — 20:00")
+  hoursWeekdays      String              @default("الأحد — الخميس: 08:00 — 20:00")
+  hoursSaturday      String              @default("الجمعة: 09:00 — 18:00")
+  hoursSunday        String              @default("السبت: 09:00 — 18:00")
+  lat                Float               @default(36.7538)
+  lng                Float               @default(3.0588)
+  rating             Float               @default(0)
+  reviewCount        Int                 @default(0)
+  isOpen             Boolean             @default(false)
+  isOnDuty           Boolean             @default(false)
+  image              String?
+  // Admin status
+  status             PharmacyStatus      @default(PENDING)
+  // Owner
+  owner              User                @relation(fields: [ownerId], references: [id])
+  ownerId            String              @unique
+  // Relations
+  stock              StockItem[]
+  subscription       Subscription?
+  payments           Payment[]
+  exchangesFrom      ExchangeRequest[]   @relation("FromPharmacy")
+  exchangesTo        ExchangeRequest[]   @relation("ToPharmacy")
+  reports            Report[]
+  createdAt          DateTime            @default(now())
+  approvedAt         DateTime?
+  updatedAt          DateTime            @updatedAt
+
+  @@map("pharmacies")
+}
+
+enum PharmacyStatus {
+  ACTIVE
+  PENDING
+  SUSPENDED
+  REJECTED
+}
+
+// ========================
+// User (Pharmacist or Admin)
+// ========================
+model User {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  passwordHash String
+  name         String
+  role         UserRole  @default(PHARMACIST)
+  pharmacy     Pharmacy?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@map("users")
+}
+
+enum UserRole {
+  ADMIN
+  PHARMACIST
+}
+
+// ========================
+// Stock Item
+// ========================
+model StockItem {
+  id          String      @id @default(cuid())
+  pharmacy    Pharmacy    @relation(fields: [pharmacyId], references: [id], onDelete: Cascade)
+  pharmacyId  String
+  medicine    Medicine    @relation(fields: [medicineId], references: [id])
+  medicineId  String
+  quantity    Int         @default(0)
+  status      StockStatus @default(UNAVAILABLE)
+  expiryDate  DateTime
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  @@unique([pharmacyId, medicineId])
+  @@map("stock_items")
+}
+
+enum StockStatus {
+  AVAILABLE
+  LIMITED
+  UNAVAILABLE
+}
+
+// ========================
+// Exchange Request (between pharmacies)
+// ========================
+model ExchangeRequest {
+  id                 String          @id @default(cuid())
+  fromPharmacy       Pharmacy        @relation("FromPharmacy", fields: [fromPharmacyId], references: [id])
+  fromPharmacyId     String
+  toPharmacy         Pharmacy        @relation("ToPharmacy", fields: [toPharmacyId], references: [id])
+  toPharmacyId       String
+  medicineName       String
+  genericName        String
+  requestedQuantity  Int
+  offeredMedicine    String?
+  offeredQuantity    Int?
+  status             ExchangeStatus  @default(PENDING)
+  notes              String?
+  createdAt          DateTime        @default(now())
+  updatedAt          DateTime        @updatedAt
+
+  @@map("exchange_requests")
+}
+
+enum ExchangeStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  COMPLETED
+}
+
+// ========================
+// Subscription
+// ========================
+model Subscription {
+  id          String             @id @default(cuid())
+  pharmacy    Pharmacy           @relation(fields: [pharmacyId], references: [id], onDelete: Cascade)
+  pharmacyId  String             @unique
+  plan        SubscriptionPlan
+  startDate   DateTime
+  endDate     DateTime
+  status      SubscriptionStatus @default(ACTIVE)
+  amount      Int
+  createdAt   DateTime           @default(now())
+  updatedAt   DateTime           @updatedAt
+
+  @@map("subscriptions")
+}
+
+enum SubscriptionPlan {
+  MONTHLY
+  YEARLY
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  EXPIRED
+  CANCELLED
+}
+
+// ========================
+// Payment
+// ========================
+model Payment {
+  id            String        @id @default(cuid())
+  pharmacy      Pharmacy      @relation(fields: [pharmacyId], references: [id])
+  pharmacyId    String
+  amount        Int
+  period        String
+  method        PaymentMethod
+  status        PaymentStatus @default(PENDING)
+  transactionRef String?
+  paidAt        DateTime?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  @@map("payments")
+}
+
+enum PaymentMethod {
+  BARIDIMOB
+  CIB
+  VIREMENT
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+}
+
+// ========================
+// Report (citizen reports)
+// ========================
+model Report {
+  id          String       @id @default(cuid())
+  pharmacy    Pharmacy     @relation(fields: [pharmacyId], references: [id])
+  pharmacyId  String
+  type        ReportType
+  reportedBy  String       @default("مستخدم مجهول")
+  description String
+  status      ReportStatus @default(PENDING)
+  notes       String?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  @@map("reports")
+}
+
+enum ReportType {
+  INCORRECT_INFO
+  UNAVAILABILITY
+  OTHER
+}
+
+enum ReportStatus {
+  PENDING
+  REVIEWING
+  RESOLVED
+  DISMISSED
+}
+
+// ========================
+// Platform Stats (aggregated)
+// ========================
+model PlatformStat {
+  id              String   @id @default(cuid())
+  date            DateTime @default(now())
+  totalSearches   Int      @default(0)
+  totalPharmacies Int      @default(0)
+  newPharmacies   Int      @default(0)
+
+  @@map("platform_stats")
+}
