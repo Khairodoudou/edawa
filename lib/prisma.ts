@@ -7,7 +7,6 @@
 
 import { PrismaClient } from "@prisma/client";
 import { PrismaLibSql } from "@prisma/adapter-libsql";
-import { createClient } from "@libsql/client";
 import path from "path";
 
 const globalForPrisma = globalThis as unknown as {
@@ -18,11 +17,11 @@ function createPrismaClient(): PrismaClient {
   const tursoUrl = process.env.TURSO_DATABASE_URL;
   const tursoToken = process.env.TURSO_AUTH_TOKEN;
 
-  let libsqlClient;
+  let adapter;
 
   if (tursoUrl && tursoToken) {
     // ── Mode Production : Turso Cloud ──────────────────────────────
-    libsqlClient = createClient({
+    adapter = new PrismaLibSql({
       url: tursoUrl,
       authToken: tursoToken,
     });
@@ -30,10 +29,8 @@ function createPrismaClient(): PrismaClient {
     // ── Mode Développement : SQLite local ──────────────────────────
     const dbPath = path.resolve(process.cwd(), "prisma/dev.db");
     const localUrl = `file:${dbPath.replace(/\\/g, "/")}`;
-    libsqlClient = createClient({ url: localUrl });
+    adapter = new PrismaLibSql({ url: localUrl });
   }
-
-  const adapter = new PrismaLibSql(libsqlClient);
 
   return new PrismaClient({
     adapter,
