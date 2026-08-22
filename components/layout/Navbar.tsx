@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, Search, MapPin, Phone, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "الرئيسية" },
@@ -29,14 +30,15 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0EA96E] to-[#1A6EBD] flex items-center justify-center shadow-md group-hover:shadow-[#0EA96E]/30 transition-shadow">
-              <span className="text-white font-bold text-lg">د</span>
-            </div>
-            <span className="text-xl font-bold">
-              <span className="text-[#0EA96E]">دو</span>
-              <span className="text-foreground">ائي</span>
-            </span>
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/logo.png"
+              alt="دوائي"
+              width={110}
+              height={44}
+              className="h-11 w-auto object-contain drop-shadow-sm group-hover:drop-shadow-md transition-all duration-200"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}

@@ -3,15 +3,17 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import {
   Eye,
   EyeOff,
-  Building2,
   ChevronRight,
   ChevronLeft,
   CheckCircle2,
+  Building2,
+  Hospital,
   CreditCard,
   Sparkles,
   ShieldCheck,
@@ -215,11 +217,19 @@ export default function PharmacistRegisterPage() {
         <div className="w-full max-w-2xl">
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#0EA96E] to-[#1A6EBD] flex items-center justify-center shadow-lg mx-auto mb-4 text-white">
-              <Building2 className="w-7 h-7" />
+            <div className="flex justify-center mb-4">
+              <Image
+                src="/logo.png"
+                alt="دوائي"
+                width={120}
+                height={120}
+                className="w-24 h-24 object-contain drop-shadow-lg"
+                priority
+              />
             </div>
-            <h1 className="text-2xl sm:text-3xl font-black text-foreground mb-2">
-              تسجيل صيدلية جديدة 🏥
+            <h1 className="text-2xl sm:text-3xl font-black text-foreground mb-2 flex items-center justify-center gap-2">
+              تسجيل صيدلية جديدة
+              <Hospital className="w-7 h-7 text-[#0EA96E]" />
             </h1>
             <p className="text-muted-foreground text-xs sm:text-sm">
               انضم إلى الشبكة الوطنية لمنصة دوائي واجعل صيدليتك مرئية لآلاف المواطنين

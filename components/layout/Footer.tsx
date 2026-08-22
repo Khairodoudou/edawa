@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail } from "lucide-react";
+import Image from "next/image";
+import { MapPin, Mail } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 
@@ -43,13 +44,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-5">
-            <Link href="/" className="flex items-center gap-2 group w-fit">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0EA96E] to-[#1A6EBD] flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xl">د</span>
-              </div>
-              <span className="text-2xl font-bold">
-                <span className="text-[#0EA96E]">دو</span>ائي
-              </span>
+            <Link href="/" className="flex items-center group w-fit">
+              <Image
+                src="/logo.png"
+                alt="دوائي"
+                width={130}
+                height={52}
+                className="h-14 w-auto object-contain drop-shadow-lg brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
+              />
             </Link>
             <p className="text-white/60 text-sm leading-7 max-w-xs">
               منصة رقمية ذكية تربط المواطنين الجزائريين بالصيدليات، لتسهيل الوصول إلى الأدوية في أسرع وقت ممكن وبأقل جهد.
