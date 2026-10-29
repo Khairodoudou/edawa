@@ -62,7 +62,7 @@ export default function AdminOverviewPage() {
     <div className="space-y-6">
       <PageHeader
         title="اللوحة العامة للإدارة"
-        description="نظرة شاملة على جميع الصيدليات، الاشتراكات، الإيرادات والنشاط العام للمنصة"
+        description="نظرة شاملة على جميع الصيدليات، الاشتراكات، الإيرادات والنشاط العام لتطبيق الويب"
         action={
           <Link
             href="/admin/dashboard/pharmacies/pending"

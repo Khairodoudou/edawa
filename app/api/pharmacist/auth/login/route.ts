@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
       // If SUSPENDED / REJECTED
       if (user.pharmacy.status === "SUSPENDED" || user.pharmacy.status === "REJECTED") {
         return errorResponse(
-          "حساب هذه الصيدلية غير مفعّل أو معلّق. يرجى التواصل مع إدارة منصة دوائي.",
+          "حساب هذه الصيدلية غير مفعّل أو معلّق. يرجى التواصل مع إدارة تطبيق ويب دوائي.",
           403
         );
       }

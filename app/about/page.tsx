@@ -5,16 +5,16 @@ import Image from "next/image";
 import { Users, Target, Eye, Heart, Building2, CheckCircle2, ArrowLeft } from "lucide-react";
 
 export const metadata = {
-  title: "حول دوائي — المنصة الجزائرية للبحث عن الأدوية",
+  title: "حول دوائي — تطبيق الويب الجزائري للبحث عن الأدوية",
   description:
-    "اكتشف رسالة وقيم منصة دوائي الرقمية التي تهدف إلى تسهيل الوصول إلى الأدوية في الجزائر.",
+    "اكتشف رسالة وقيم تطبيق ويب دوائي الرقمي الذي يهدف إلى تسهيل الوصول إلى الأدوية في الجزائر.",
 };
 
 const values = [
   {
     icon: Heart,
     title: "في خدمة المواطن",
-    desc: "صُمّمت كل ميزة في المنصة لتوفير تجربة سلسة وسريعة للمواطن الباحث عن دوائه.",
+    desc: "صُمّمت كل ميزة في تطبيق الويب لتوفير تجربة سلسة وسريعة للمواطن الباحث عن دوائه.",
   },
   {
     icon: CheckCircle2,
@@ -34,7 +34,7 @@ const values = [
 ];
 
 const team = [
-  { name: "فريق التطوير", role: "تطوير وهندسة المنصة", avatar: "ت", color: "from-[#0EA96E] to-[#0A7A50]" },
+  { name: "فريق التطوير", role: "تطوير وهندسة تطبيق الويب", avatar: "ت", color: "from-[#0EA96E] to-[#0A7A50]" },
   { name: "فريق التصميم", role: "تصميم تجربة المستخدم", avatar: "ص", color: "from-[#1A6EBD] to-[#114E8A]" },
   { name: "الشراكات الصيدلانية", role: "إدارة علاقات الصيدليات", avatar: "ش", color: "from-[#7C3AED] to-[#5B21B6]" },
 ];
@@ -56,7 +56,7 @@ export default function AboutPage() {
               <span className="gradient-text">إلى الدواء</span>
             </h1>
             <p className="text-white/60 text-lg leading-8 max-w-2xl mx-auto">
-              دوائي منصة رقمية جزائرية تربط المواطنين بالصيدليات. نؤمن بأن الوصول إلى
+              دوائي تطبيق ويب رقمي جزائري يربط المواطنين بالصيدليات. نؤمن بأن الوصول إلى
               الدواء في الوقت المناسب حق أساسي لكل مواطن.
             </p>
           </div>
@@ -85,13 +85,13 @@ export default function AboutPage() {
                 icon: Target,
                 color: "bg-[#0EA96E]/10 text-[#0EA96E]",
                 title: "مهمّتنا",
-                text: "توفير منصة رقمية ذكية تمكّن كل جزائري من معرفة الصيدليات التي يتوفر فيها الدواء الذي يحتاجه، في أقرب وقت ممكن، بأقل جهد ممكن.",
+                text: "توفير تطبيق ويب رقمي ذكي يمكّن كل جزائري من معرفة الصيدليات التي يتوفر فيها الدواء الذي يحتاجه، في أقرب وقت ممكن، بأقل جهد ممكن.",
               },
               {
                 icon: Eye,
                 color: "bg-[#1A6EBD]/10 text-[#1A6EBD]",
                 title: "رؤيتنا",
-                text: "أن تصبح دوائي المرجع الأول في قطاع الصحة الرقمية بالجزائر، وأن تنتقل من منصة بحث عن الأدوية إلى منظومة صحية رقمية متكاملة.",
+                text: "أن تصبح دوائي المرجع الأول في قطاع الصحة الرقمية بالجزائر، وأن تنتقل من تطبيق ويب للبحث عن الأدوية إلى منظومة صحية رقمية متكاملة.",
               },
             ].map((item, i) => (
               <div
@@ -136,7 +136,7 @@ export default function AboutPage() {
       <section className="py-20 bg-background">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-[#0f2d20] to-[#0f1f35] rounded-3xl p-10 text-center">
-            <h2 className="text-3xl font-black text-white mb-10">المنصة بالأرقام</h2>
+            <h2 className="text-3xl font-black text-white mb-10">تطبيق الويب بالأرقام</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
               {[
                 { value: "+2847", label: "دواء مسجّل" },
@@ -176,7 +176,7 @@ export default function AboutPage() {
             <div className="flex-1">
               <div className="mb-8">
                 <h2 className="text-3xl font-black mb-3">فريق دوائي</h2>
-                <p className="text-muted-foreground">أشخاص متحمّسون يعملون على تطوير المنصة</p>
+                <p className="text-muted-foreground">أشخاص متحمّسون يعملون على تطوير تطبيق الويب</p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {team.map((member, i) => (

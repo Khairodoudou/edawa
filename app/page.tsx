@@ -32,7 +32,7 @@ import { testimonials } from "@/lib/mock-data";
 export const metadata = {
   title: "دوائي — ابحث عن أدويتك في الصيدليات القريبة منك",
   description:
-    "منصة دوائي الرقمية تمكّنك من البحث عن الأدوية ومعرفة الصيدليات التي تتوفر فيها بالقرب منك في كل ولايات الجزائر.",
+    "تطبيق ويب دوائي الرقمي يمكّنك من البحث عن الأدوية ومعرفة الصيدليات التي تتوفر فيها بالقرب منك في كل ولايات الجزائر.",
 };
 
 const steps = [
@@ -40,7 +40,7 @@ const steps = [
     icon: Search,
     step: "01",
     title: "ابحث عن الدواء",
-    desc: "اكتب اسم الدواء الذي تبحث عنه في خانة البحث. يدعم المنصة آلاف الأدوية المسجّلة في الجزائر.",
+    desc: "اكتب اسم الدواء الذي تبحث عنه في خانة البحث. يدعم تطبيق الويب آلاف الأدوية المسجّلة في الجزائر.",
     color: "from-[#0EA96E] to-[#0A7A50]",
   },
   {
@@ -116,7 +116,7 @@ export default async function HomePage() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0EA96E]/15 border border-[#0EA96E]/30 text-[#0EA96E] text-sm font-semibold mb-8">
             <span className="w-2 h-2 rounded-full bg-[#0EA96E] pulse-green" />
-            منصة جزائرية رقمية للصحة
+            تطبيق ويب جزائري رقمي للصحة
           </div>
 
           {/* Headline */}
@@ -237,7 +237,7 @@ export default async function HomePage() {
               href="/how-it-works"
               className="inline-flex items-center gap-2 text-[#0EA96E] font-semibold hover:gap-3 transition-all"
             >
-              اعرف أكثر عن المنصة
+              اعرف أكثر عن تطبيق الويب
               <ChevronLeft className="w-4 h-4" />
             </Link>
           </div>
@@ -331,7 +331,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="text-3xl font-black mb-3">ماذا يقول المستخدمون؟</h2>
-            <p className="text-muted-foreground">آراء حقيقية من مستخدمي المنصة</p>
+            <p className="text-muted-foreground">آراء حقيقية من مستخدمي تطبيق الويب</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {testimonials.map((t) => (
@@ -389,7 +389,7 @@ export default async function HomePage() {
                   أنت صيدلاني؟
                 </h2>
                 <p className="text-white/65 text-base mb-6 leading-8">
-                  انضم إلى منصة دوائي وأدِر مخزونك بذكاء. اجعل صيدليتك مرئيةً لآلاف
+                  انضم إلى تطبيق ويب دوائي وأدِر مخزونك بذكاء. اجعل صيدليتك مرئيةً لآلاف
                   المواطنين الباحثين عن الأدوية في منطقتك.
                 </p>
                 <div className="flex flex-col items-center lg:items-end gap-2 mb-8">

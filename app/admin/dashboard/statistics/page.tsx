@@ -98,7 +98,7 @@ export default function AdminStatisticsPage() {
             <StatCard
               title="إجمالي البحث الوطني"
               value={(stats?.monthlySearches || 1240).toLocaleString("ar-DZ")}
-              subtitle="عملية بحث عبر المنصة"
+              subtitle="عملية بحث عبر تطبيق الويب"
               icon={Search}
               trend={{ value: "+28%", isUp: true }}
               color="blue"
@@ -182,7 +182,7 @@ export default function AdminStatisticsPage() {
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="font-black text-base text-foreground">تطور حركة البحث والنشاط الشهري</h3>
-                  <p className="text-xs text-muted-foreground">تطور وتدفق عمليات البحث على مستوى المنصة</p>
+                  <p className="text-xs text-muted-foreground">تطور وتدفق عمليات البحث على مستوى تطبيق الويب</p>
                 </div>
                 <BarChart3 className="w-5 h-5 text-[#1A6EBD]" />
               </div>
@@ -226,7 +226,7 @@ export default function AdminStatisticsPage() {
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="font-black text-base text-foreground">أبرز الأدوية في الكتالوج والمخزون</h3>
-                  <p className="text-xs text-muted-foreground">أصناف الأدوية المسجلة والمتوفرة في المنصة</p>
+                  <p className="text-xs text-muted-foreground">أصناف الأدوية المسجلة والمتوفرة في تطبيق الويب</p>
                 </div>
                 <Flame className="w-5 h-5 text-amber-500" />
               </div>

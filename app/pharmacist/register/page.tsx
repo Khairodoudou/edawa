@@ -232,7 +232,7 @@ export default function PharmacistRegisterPage() {
               <Hospital className="w-7 h-7 text-[#0EA96E]" />
             </h1>
             <p className="text-muted-foreground text-xs sm:text-sm">
-              انضم إلى الشبكة الوطنية لمنصة دوائي واجعل صيدليتك مرئية لآلاف المواطنين
+              انضم إلى الشبكة الوطنية لتطبيق ويب دوائي واجعل صيدليتك مرئية لآلاف المواطنين
             </p>
           </div>
 
@@ -565,7 +565,7 @@ export default function PharmacistRegisterPage() {
                   <div className="flex items-center gap-2 pb-2 border-b border-border mb-3">
                     <CreditCard className="w-5 h-5 text-[#0EA96E]" />
                     <h2 className="text-lg sm:text-xl font-black text-foreground">
-                      4. اختيار باقة الاشتراك في منصة دوائي
+                      4. اختيار باقة الاشتراك في تطبيق ويب دوائي
                     </h2>
                   </div>
                   <p className="text-xs sm:text-sm text-muted-foreground">
@@ -758,7 +758,7 @@ export default function PharmacistRegisterPage() {
                       >
                         سياسة الخصوصية
                       </Link>{" "}
-                      الخاصة بمنصة دوائي.
+                      الخاصة بتطبيق ويب دوائي.
                     </label>
                   </div>
                 </div>

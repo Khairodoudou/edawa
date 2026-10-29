@@ -172,7 +172,7 @@ export default function AdminPaymentsPage() {
     <div class="header">
       <div>
         <div class="logo">دوائي <span>EDAWA PLATFORM</span></div>
-        <p style="font-size: 11px; color: #64748b; margin-top: 4px;">المنصة الوطنية المعتمدة للربط والخدمات الصيدلانية</p>
+        <p style="font-size: 11px; color: #64748b; margin-top: 4px;">تطبيق الويب الوطني المعتمد للربط والخدمات الصيدلانية</p>
         <p style="font-size: 10px; color: #94a3b8;">الجمهورية الجزائرية الديمقراطية الشعبية</p>
       </div>
       <div class="invoice-title">
@@ -190,7 +190,7 @@ export default function AdminPaymentsPage() {
     <div class="parties">
       <div class="party-card">
         <h3>الجهة المصدِرة</h3>
-        <p><strong>منصة دوائي الوطنية للتقنية الصحية</strong></p>
+        <p><strong>تطبيق ويب دوائي الوطني للتقنية الصحية</strong></p>
         <p>الجزائر العاصمة — الجمهورية الجزائرية</p>
         <p>البريد الإلكتروني: billing@edawa.dz</p>
         <p>الهاتف: 023 50 50 50</p>
@@ -240,14 +240,14 @@ export default function AdminPaymentsPage() {
         <p>تاريخ السداد: <strong>${payment.paidAt || payment.date}</strong></p>
       </div>
       <div class="stamp">
-        <div>منصة دوائي</div>
+        <div>تطبيق ويب دوائي</div>
         <div style="font-size: 11px;">★ معتمد ★</div>
         <div>PAYÉ & CONFIRMÉ</div>
       </div>
     </div>
 
     <div class="footer-note">
-      تعتبر هذه الوثيقة فاتورة رسمية صادرة إلكترونياً ومسجلة في النظام المركزي لمنصة دوائي.
+      تعتبر هذه الوثيقة فاتورة رسمية صادرة إلكترونياً ومسجلة في النظام المركزي لتطبيق ويب دوائي.
     </div>
   </div>
   <script>
@@ -278,7 +278,7 @@ export default function AdminPaymentsPage() {
           <div className="text-3xl font-black text-[#0EA96E]">
             {stats.totalRevenue.toLocaleString("ar-DZ")} دج
           </div>
-          <p className="text-[11px] text-white/50">تراكمي منذ انطلاق المنصة</p>
+          <p className="text-[11px] text-white/50">تراكمي منذ انطلاق تطبيق الويب</p>
         </div>
 
         <StatCard
@@ -473,7 +473,7 @@ export default function AdminPaymentsPage() {
                       دوائي <span className="text-xs text-[#1A6EBD]">EDAWA PLATFORM</span>
                     </div>
                     <p className="text-[11px] text-muted-foreground">
-                      المنصة الوطنية المعتمدة للربط والخدمات الصيدلانية
+                      تطبيق الويب الوطني المعتمد للربط والخدمات الصيدلانية
                     </p>
                     <p className="text-[10px] text-muted-foreground">
                       الجمهورية الجزائرية الديمقراطية الشعبية
@@ -500,7 +500,7 @@ export default function AdminPaymentsPage() {
                       الجهة المصدِرة:
                     </span>
                     <strong className="block text-foreground text-xs">
-                      منصة دوائي الوطنية للتقنية الصحية
+                      تطبيق ويب دوائي الوطني للتقنية الصحية
                     </strong>
                     <p className="text-muted-foreground text-[11px]">الجزائر العاصمة — الجمهورية الجزائرية</p>
                     <p className="text-muted-foreground text-[11px]">billing@edawa.dz</p>
@@ -606,7 +606,7 @@ export default function AdminPaymentsPage() {
                     <p>تعتبر هذه الوثيقة فاتورة رسمية صادرة إلكترونياً ومسجلة في النظام المركزي.</p>
                   </div>
                   <div className="border-2 border-[#0EA96E] text-[#0EA96E] rounded-full w-20 h-20 flex flex-col items-center justify-center text-[9px] font-black rotate-[-12deg] shadow-xs">
-                    <span>منصة دوائي</span>
+                    <span>تطبيق ويب دوائي</span>
                     <span className="text-[10px]">★ معتمد ★</span>
                     <span>PAYÉ</span>
                   </div>

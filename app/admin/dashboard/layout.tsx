@@ -139,7 +139,7 @@ export default function AdminDashboardLayout({
               <span className="font-black text-base tracking-wide block">
                 دوائي <span className="text-[#1A6EBD] text-xs font-bold">Admin</span>
               </span>
-              <span className="text-[10px] text-white/50 block">لوحة إدارة المنصة</span>
+              <span className="text-[10px] text-white/50 block">لوحة إدارة تطبيق الويب</span>
             </div>
           </Link>
           <button
@@ -200,7 +200,7 @@ export default function AdminDashboardLayout({
               </div>
               <div className="text-right hidden sm:block">
                 <span className="font-bold text-xs block leading-tight">
-                  مدير المنصة
+                  مدير تطبيق الويب
                 </span>
                 <span className="text-[10px] text-muted-foreground">
                   admin@gmail.com

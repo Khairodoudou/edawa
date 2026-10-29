@@ -93,7 +93,7 @@ export default function AdminMedicinesPage() {
     <div className="space-y-6">
       <PageHeader
         title="إدارة الكتالوج الوطني للأدوية"
-        description="إضافة، تعديل، وحذف الأدوية المتاحة في قاعدة البيانات الوطنية للمنصة"
+        description="إضافة، تعديل، وحذف الأدوية المتاحة في قاعدة البيانات الوطنية لتطبيق الويب"
         action={
           <Link
             href="/admin/dashboard/medicines/add"

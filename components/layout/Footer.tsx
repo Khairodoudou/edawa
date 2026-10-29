@@ -7,13 +7,13 @@ import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 const footerLinks = {
   platform: {
-    title: "المنصة",
+    title: "تطبيق الويب",
     links: [
       { href: "/", label: "الرئيسية" },
       { href: "/search", label: "بحث عن دواء" },
       { href: "/map", label: "خريطة الصيدليات" },
       { href: "/#download-app", label: "تحميل التطبيق (PWA)" },
-      { href: "/how-it-works", label: "كيف تعمل المنصة" },
+      { href: "/how-it-works", label: "كيف يعمل تطبيق الويب" },
     ],
   },
   pharmacists: {
@@ -27,7 +27,7 @@ const footerLinks = {
   support: {
     title: "المساعدة",
     links: [
-      { href: "/about", label: "حول المنصة" },
+      { href: "/about", label: "حول تطبيق الويب" },
       { href: "/contact", label: "اتصل بنا" },
       { href: "/terms", label: "الشروط والأحكام" },
       { href: "/privacy", label: "سياسة الخصوصية" },
@@ -48,14 +48,14 @@ export default function Footer() {
             <Link href="/" className="flex items-center group w-fit" aria-label="دوائي - الصفحة الرئيسية">
               <Image
                 src="/logo.png"
-                alt="شعار منصة دوائي"
+                alt="شعار تطبيق ويب دوائي"
                 width={160}
                 height={64}
                 className="h-16 w-auto object-contain drop-shadow-lg brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
               />
             </Link>
             <p className="text-white/60 text-sm leading-7 max-w-xs">
-              منصة رقمية ذكية تربط المواطنين الجزائريين بالصيدليات، لتسهيل الوصول إلى الأدوية في أسرع وقت ممكن وبأقل جهد.
+              تطبيق ويب رقمي ذكي يربط المواطنين الجزائريين بالصيدليات، لتسهيل الوصول إلى الأدوية في أسرع وقت ممكن وبأقل جهد.
             </p>
             {/* Social Media */}
             <div className="flex items-center gap-3">

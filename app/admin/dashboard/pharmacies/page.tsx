@@ -123,7 +123,7 @@ export default function AdminPharmaciesPage() {
     <div className="space-y-6">
       <PageHeader
         title="إدارة الصيدليات المسجلة"
-        description="عرض، تصفية، تفعيل، تجميد أو حذف الصيدليات المسجلة في منصة دوائي عبر 69 ولاية"
+        description="عرض، تصفية، تفعيل، تجميد أو حذف الصيدليات المسجلة في تطبيق ويب دوائي عبر 69 ولاية"
       />
 
       {/* Success Feedback Alert */}

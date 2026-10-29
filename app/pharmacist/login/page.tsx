@@ -57,7 +57,7 @@ export default function PharmacistLoginPage() {
       }
 
       if (pharmacyStatus === "SUSPENDED" || pharmacyStatus === "REJECTED") {
-        setError("حساب الصيدلية غير مفعّل أو معلّق. يرجى التواصل مع إدارة المنصة.");
+        setError("حساب الصيدلية غير مفعّل أو معلّق. يرجى التواصل مع إدارة تطبيق الويب.");
         return;
       }
 
@@ -210,7 +210,7 @@ export default function PharmacistLoginPage() {
               <div className="space-y-3">
                 <div className="flex items-center gap-2 text-[#0EA96E]">
                   <CheckCircle2 className="w-5 h-5 fill-[#0EA96E] text-[#0f2d20]" />
-                  <span className="font-bold text-sm text-white">منصة دوائي للصحة الرقمية</span>
+                  <span className="font-bold text-sm text-white">تطبيق ويب دوائي للصحة الرقمية</span>
                 </div>
                 <p className="text-white/90 text-sm leading-6 font-semibold">
                   &ldquo;إدارة أسهل لمخزون الأدوية وتواصل مباشر مع آلاف المواطنين في منطقتك.&rdquo;

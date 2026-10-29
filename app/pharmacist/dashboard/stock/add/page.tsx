@@ -190,7 +190,7 @@ export default function AddStockItemPage() {
         <div className="p-12 text-center text-muted-foreground bg-card border border-border rounded-3xl space-y-3">
           <Pill className="w-10 h-10 mx-auto opacity-50" />
           <p className="font-bold text-sm text-foreground">لا توجد أدوية في الكتالوج الوطني حالياً</p>
-          <p className="text-xs">اطلب من إدارة المنصة إضافة الأدوية إلى الكتالوج أولاً.</p>
+          <p className="text-xs">اطلب من إدارة تطبيق الويب إضافة الأدوية إلى الكتالوج أولاً.</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-5">

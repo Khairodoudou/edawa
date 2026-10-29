@@ -11,7 +11,7 @@ const navLinks = [
   { href: "/search", label: "بحث عن دواء" },
   { href: "/map", label: "خريطة الصيدليات" },
   { href: "/#download-app", label: "تحميل التطبيق" },
-  { href: "/how-it-works", label: "كيف تعمل المنصة" },
+  { href: "/how-it-works", label: "كيف يعمل تطبيق الويب" },
   { href: "/about", label: "حولنا" },
 ];
 
@@ -36,7 +36,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center group py-1" aria-label="دوائي - الصفحة الرئيسية">
             <Image
               src="/logo.png"
-              alt="شعار منصة دوائي"
+              alt="شعار تطبيق ويب دوائي"
               width={180}
               height={72}
               className="h-12 sm:h-14 lg:h-[60px] w-auto object-contain drop-shadow-xs group-hover:scale-105 group-hover:drop-shadow-md transition-all duration-300"

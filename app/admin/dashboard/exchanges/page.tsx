@@ -95,7 +95,7 @@ export default function AdminExchangesPage() {
     <div className="space-y-6">
       <PageHeader
         title="🗄️ الأرشيف الوطني لتبادل الأدوية بين الصيدليات"
-        description="متابعة وتوثيق جميع عمليات تبادل ومقايضة الأدوية المنجزة وقيد التنفيذ بين الصيدليات عبر المنصة"
+        description="متابعة وتوثيق جميع عمليات تبادل ومقايضة الأدوية المنجزة وقيد التنفيذ بين الصيدليات عبر تطبيق الويب"
         action={
           <div className="flex items-center gap-2">
             <button
