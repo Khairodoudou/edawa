@@ -12,6 +12,7 @@ const footerLinks = {
       { href: "/", label: "الرئيسية" },
       { href: "/search", label: "بحث عن دواء" },
       { href: "/map", label: "خريطة الصيدليات" },
+      { href: "/#download-app", label: "تحميل التطبيق (PWA)" },
       { href: "/how-it-works", label: "كيف تعمل المنصة" },
     ],
   },
@@ -44,13 +45,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-5">
-            <Link href="/" className="flex items-center group w-fit">
+            <Link href="/" className="flex items-center group w-fit" aria-label="دوائي - الصفحة الرئيسية">
               <Image
                 src="/logo.png"
-                alt="دوائي"
-                width={130}
-                height={52}
-                className="h-14 w-auto object-contain drop-shadow-lg brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
+                alt="شعار منصة دوائي"
+                width={160}
+                height={64}
+                className="h-16 w-auto object-contain drop-shadow-lg brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
               />
             </Link>
             <p className="text-white/60 text-sm leading-7 max-w-xs">

@@ -2,6 +2,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SearchBar from "@/components/shared/SearchBar";
 import PharmacyCard from "@/components/shared/PharmacyCard";
+import DownloadAppSection from "@/components/pwa/DownloadAppSection";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -423,6 +424,9 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ======== DOWNLOAD APP (PWA) ======== */}
+      <DownloadAppSection />
 
       <Footer />
     </>

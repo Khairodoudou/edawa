@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/", label: "الرئيسية" },
   { href: "/search", label: "بحث عن دواء" },
   { href: "/map", label: "خريطة الصيدليات" },
+  { href: "/#download-app", label: "تحميل التطبيق" },
   { href: "/how-it-works", label: "كيف تعمل المنصة" },
   { href: "/about", label: "حولنا" },
 ];
@@ -17,26 +18,28 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const [prevPathname, setPrevPathname] = useState(pathname);
 
-  useEffect(() => {
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setIsOpen(false);
-  }, [pathname]);
+  }
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-card border-b border-border shadow-xs transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-card/95 backdrop-blur-md border-b border-border shadow-xs transition-all duration-300">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-18">
+        <div className="flex items-center justify-between h-16 sm:h-18 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
+          <Link href="/" className="flex items-center group py-1" aria-label="دوائي - الصفحة الرئيسية">
             <Image
               src="/logo.png"
-              alt="دوائي"
-              width={110}
-              height={44}
-              className="h-11 w-auto object-contain drop-shadow-sm group-hover:drop-shadow-md transition-all duration-200"
+              alt="شعار منصة دوائي"
+              width={180}
+              height={72}
+              className="h-12 sm:h-14 lg:h-[60px] w-auto object-contain drop-shadow-xs group-hover:scale-105 group-hover:drop-shadow-md transition-all duration-300"
               priority
             />
           </Link>
